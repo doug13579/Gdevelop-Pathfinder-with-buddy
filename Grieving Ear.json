@@ -447,7 +447,7 @@
           "angle": 0,
           "customSize": true,
           "depth": 32,
-          "height": 18,
+          "height": 31,
           "layer": "",
           "name": "SquareBlueSlider",
           "persistentUuid": "902baf24-6514-4122-b370-3aafeb8d7a7a",
@@ -1018,7 +1018,7 @@
             "BarBottomPadding": 4,
             "LabelMargin": 4,
             "InitialValue": 10,
-            "MinValue": 1,
+            "MinValue": 5,
             "ShowLabelAtChanges": false
           },
           "childrenContent": {
@@ -1207,6 +1207,17 @@
                     "Pathfinding",
                     "PathShapePainter",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "GridSizeText",
+                    "Text",
+                    "=",
+                    "\"Grid Size=\" + ToString(SquareBlueSlider.Value())"
                   ]
                 }
               ]
@@ -1483,11 +1494,33 @@
                     },
                     {
                       "type": {
-                        "value": "PanelSpriteSlider::PanelSpriteSlider::IsBeingDragged"
+                        "value": "BuiltinCommonInstructions::And"
                       },
                       "parameters": [
-                        "SquareBlueSlider",
+                        "",
                         ""
+                      ],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "SourisSurObjet"
+                          },
+                          "parameters": [
+                            "SquareBlueSlider",
+                            "",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "MouseButtonReleased"
+                          },
+                          "parameters": [
+                            "",
+                            "Left"
+                          ]
+                        }
                       ]
                     },
                     {
